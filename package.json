@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "tec-api",
+  "version": "1.0.0",
+  "description": "\"API usando Node e Express\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrluna/tec-api.git"
+  },
+  "author": "Gabriel Luna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielrluna/tec-api/issues"
+  },
+  "homepage": "https://github.com/gabrielrluna/tec-api#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
