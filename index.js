@@ -1,17 +1,26 @@
 import express from "express";
+import {ler} from "./src/aluno.js";
+
 const app = express();
 const porta = 3000;
+
+// Configuando suporte a JSON 
+app.use(express.json());
+
+// Configurando suporte a dados de inputs e formularios
+app.use(express.urlencoded({extended : true}));
 
 // ROTAS
 
 // Rota para a raiz da API 
 app.get('/', (req,res) => {
-    res.send(`É um dia lindo para aprender sobre APIs`);
+    res.send(`Página inicial da API`);
 })
 
 //Rota para exibir todos os alunos
 app.get('/alunos', (req, res) => {
-    res.send("Exibindo todos os alunos");
+    // res.send("Exibindo todos os alunos");
+    ler(res);
 })
 
 // Rota para exibir apenas um aluno 
@@ -32,7 +41,7 @@ app.patch('/alunos/:id', (req, res) => {
     res.send('Atualizando alguns/todos os dados de um aluno');
 })
 
-app.delete('alunos/:id', (req, res) => {
+app.delete('/alunos/:id', (req, res) => {
     res.send ('Deletando aluno');
 })
 
