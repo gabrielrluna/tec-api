@@ -19,3 +19,6 @@ conexao.connect(erro =>{
         } 
     });
 
+
+    export default conexao;
+
