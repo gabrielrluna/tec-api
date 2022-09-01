@@ -1,5 +1,5 @@
 import express from "express";
-import {ler, inserir, lerUm, atualizar} from "./src/aluno.js";
+import {ler, inserir, lerUm, atualizar, deletar} from "./src/aluno.js";
 
 const app = express();
 const porta = 3000;
@@ -48,7 +48,10 @@ app.patch('/alunos/:id', (req, res) => {
 })
 
 app.delete('/alunos/:id', (req, res) => {
-    res.send ('Deletando aluno');
+    // res.send ('Deletando aluno');
+    const id = parseInt(req.params.id);
+    deletar(id, res);
+
 })
 
 

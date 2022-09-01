@@ -61,7 +61,7 @@ function atualizar(id, alunos, res){
         if(erro){
             res.status(400).json(erro.code);
         } else {
-            res.status(200).json({"status": "Atualizado com sucesso!"});//201 - criado e apresenta mensagem "Aluno inserido"
+            res.status(201).json({"status": "Atualizado com sucesso!"});//201 - criado e apresenta mensagem "Aluno inserido"
 
             // Outra opção (Spread Operator)
             // res.status(200).json({...aluno, id});
@@ -69,5 +69,20 @@ function atualizar(id, alunos, res){
     });
 }
 
-export {ler, inserir, lerUm, atualizar};
+//Deletar aluno
+
+function deletar(id, res) {
+    const sql = "DELETE FROM alunos WHERE id = ?";
+    conexao.query(sql, id, (erro, resultados) => {
+        if(erro){
+            res.status(400).json(erro.code);
+        } else {
+            res.status(201).json({"status": "Exclusão concluída!"})
+        }
+
+    })
+    
+}
+
+export {ler, inserir, lerUm, atualizar, deletar};
 
